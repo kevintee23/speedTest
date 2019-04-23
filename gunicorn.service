@@ -1,0 +1,15 @@
+[Unit]
+Description=gunicorn daemon for /home/pi/speedtest.py
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+RuntimeDirectory=gunicorn
+WorkingDirectory=/home/pi/
+ExecStart=/usr/bin/gunicorn -b 0.0.0.0:5000 speedtest:app
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
