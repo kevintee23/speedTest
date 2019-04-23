@@ -22,3 +22,8 @@ sudo npm install -global fast-speedtest-api
 
 echo '[+] Installing flask...'
 sudo pip install flask
+
+echo '[+] Cloning gunicorn service file to the appropriate folder'
+sudo cp ~/speedtest/gunicorn.service /etc/systemd/system/
+
+echo 'May the force be with you...'
