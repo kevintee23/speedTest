@@ -19,3 +19,5 @@ Once everything is installed, you will need to get your speedtest Token. Once yo
 cd speedTest
 
 nano speedtest.py
+
+On the last line, replace 'yourSpeedtestToken' with your actual token. Control X, Y and Enter!
