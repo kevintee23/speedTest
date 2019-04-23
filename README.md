@@ -13,3 +13,9 @@ cd speedTest
 chmod +x install.sh
 
 sudo ./install.sh
+
+Once everything is installed, you will need to get your speedtest Token. Once you have your token, using terminal:-
+
+cd speedTest
+
+nano speedtest.py
