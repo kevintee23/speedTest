@@ -29,6 +29,6 @@ echo '[+] Installing flask...'
 sudo pip install flask
 
 echo '[+] Cloning gunicorn service file to the appropriate folder'
-sudo cp /home/pi/speedtest/gunicorn.service /etc/systemd/system/
+sudo cp /home/pi/speedTest/gunicorn.service /etc/systemd/system/
 
 echo 'May the force be with you...'
