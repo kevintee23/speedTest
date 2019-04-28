@@ -13,7 +13,7 @@ echo '[+] Installing npm...'
 sudo apt-get install npm
 
 echo '[+] Installing pip and gunicorn...'
-sudo apt-get install python-pip gunicorn
+sudo apt-get install python-pip gunicorn awscli
 
 echo '[+] Downloading the latest and stable version of nodejs...'
 sudo npm cache clean -f
