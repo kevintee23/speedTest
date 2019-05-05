@@ -1,23 +1,5 @@
 # speedTest
 
-Clone this project using your terminal. Please make sure that you have git installed first. To do this, open your terminal and enter
+This is a headless service that runs on your Raspberry Pi when activated. The service is activated using Alexa or Google Voice via the SmartThings platform. For more detailed information and installation of this service, please refer to the below site:-
 
->>sudo apt-get install git make
-
-Once git is installed, follow the below:-
-
-git clone https://github.com/kevintee23/speedTest.git
-
-cd speedTest
-
-chmod +x install.sh
-
-sudo ./install.sh
-
-Once everything is installed, you will need to get your speedtest Token. Once you have your token, using terminal:-
-
-cd speedTest
-
-nano speedtest.py
-
-On the last line, replace 'yourSpeedtestToken' with your actual token. Control X, Y and Enter!
+http://www.mysmartcave.net/2019/04/27/performing-a-speedtest-using-google-home-and-or-alexa/
