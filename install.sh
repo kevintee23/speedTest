@@ -85,7 +85,7 @@ sudo echo "[Service]" >> gunicorn-speedtest.service
 sudo echo "User=pi" >> gunicorn-speedtest.service
 sudo echo "Group=www-data" >> gunicorn-speedtest.service
 sudo echo "RuntimeDirectory=gunicorn" >> gunicorn-speedtest.service
-sudo echo "WorkingDirectory=/home/pi/usr/bin/$hpdir" >> gunicorn-speedtest.service
+sudo echo "WorkingDirectory=/home/pi/usr/bin/" >> gunicorn-speedtest.service
 sudo echo "ExecStart=gunicorn -b 0.0.0.0:$ipport --chdir /home/pi/$stdir/ speedtest:app" >> gunicorn-speedtest.service
 sudo echo "ExecReload=/bin/kill -s HUP $MAINPID" >> gunicorn-speedtest.service
 sudo echo "ExecStop=/bin/kill -s TERM $MAINPID" >> gunicorn-speedtest.service
