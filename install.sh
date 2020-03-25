@@ -55,9 +55,10 @@ echo -e "$Cyan[+] Installing python...$Color_Off"
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 sudo python3 get-pip.py
+sudo apt-get install python3-pip
 
 echo -e "$Cyan[+] Installing gunicorn...$Color_Off"
-sudo apt-get install -y gunicorn
+sudo pip3 gunicorn
 
 echo -e "$Cyan[+] Downloading the latest and stable version of nodejs...$Color_Off"
 sudo npm cache clean -f
@@ -70,7 +71,7 @@ echo -e "$Cyan[+] Installing the speedtest script...$Color_Off"
 sudo npm install -global fast-speedtest-api
 
 echo -e "$Cyan[+] Installing flask...$Color_Off"
-sudo python -m pip install flask
+sudo pip3 install flask
 
 echo -e "$Cyan[+] Writing relevant and required files...$Color_Off"
 cd ~
@@ -84,8 +85,8 @@ sudo echo "[Service]" >> gunicorn-speedtest.service
 sudo echo "User=pi" >> gunicorn-speedtest.service
 sudo echo "Group=www-data" >> gunicorn-speedtest.service
 sudo echo "RuntimeDirectory=gunicorn" >> gunicorn-speedtest.service
-sudo echo "WorkingDirectory=/home/pi/$hpdir" >> gunicorn-speedtest.service
-sudo echo "ExecStart=/usr/bin/gunicorn -b 0.0.0.0:$ipport speedtest:app" >> gunicorn-speedtest.service
+sudo echo "WorkingDirectory=/home/pi/usr/bin/$hpdir" >> gunicorn-speedtest.service
+sudo echo "ExecStart=gunicorn -b 0.0.0.0:$ipport --chdir /home/pi/$stdir/ speedtest:app" >> gunicorn-speedtest.service
 sudo echo "ExecReload=/bin/kill -s HUP $MAINPID" >> gunicorn-speedtest.service
 sudo echo "ExecStop=/bin/kill -s TERM $MAINPID" >> gunicorn-speedtest.service
 sudo echo " " >> gunicorn-speedtest.service
@@ -97,7 +98,7 @@ echo -e "$Purple gunicorn.service file created successfully in /home/pi/$stdir $
 cd ~
 cd /home/pi/$stdir
 echo -e "$Cyan Creating speedtest script - speedtest.py... $Color_Off"
-sudo echo "import process" > speedtest.py
+sudo echo "import subprocess" > speedtest.py
 sudo echo "import os" >> speedtest.py
 sudo echo "" >> speedtest.py
 sudo echo "from flask import Flask" >> speedtest.py
