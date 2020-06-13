@@ -53,7 +53,6 @@ sudo apt-get install -y npm
 
 echo -e "$Cyan[+] Installing python...$Color_Off"
 wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
 sudo python3 get-pip.py
 sudo apt-get install python3-pip
 
