@@ -58,7 +58,7 @@ sudo python3 get-pip.py
 sudo apt-get install python3-pip
 
 echo -e "$Cyan[+] Installing gunicorn...$Color_Off"
-sudo pip3 gunicorn
+sudo pip3 install gunicorn
 
 echo -e "$Cyan[+] Downloading the latest and stable version of nodejs...$Color_Off"
 sudo npm cache clean -f
